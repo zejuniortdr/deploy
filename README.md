@@ -1,13 +1,13 @@
-# deploy
-Scripts para automatizar clones/deploy
+## CLONE
+Scripts para automatizar clones de projetos em django
 
-## Instalação:
+### Instalação:
 ```bash
 curl https://raw.githubusercontent.com/zejuniortdr/deploy/master/clone -o clone
 chmod +x clone
 ```
 
-## Execução:
+### Execução:
 ```bash
 ./clone
 ```
