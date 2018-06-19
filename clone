@@ -36,7 +36,7 @@ pip install -r requirements.txt
 echo "=============================================="
 echo "Criando ./run"
 echo "=============================================="
-echo "Qual porta deseja rodar o projeto? [padrão: ] "
+echo "Qual porta deseja rodar o projeto? [padrão: 8000] "
 read porta
 echo "deactivate" >> run
 echo ". ../09_ENV/django/bin/activate" >> run
