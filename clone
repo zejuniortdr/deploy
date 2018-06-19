@@ -33,13 +33,17 @@ echo "=============================================="
 echo "Instalando dependencias do projeto..."
 echo "=============================================="
 pip install -r requirements.txt
+echo "=============================================="
 echo "Criando ./run"
+echo "=============================================="
+echo "Qual porta deseja rodar o projeto? [padrão: ] "
+read porta
 echo "deactivate" >> run
 echo ". ../09_ENV/django/bin/activate" >> run
-echo "python manage.py runserver 0.0.0.0:8000" >> run
+echo "python manage.py runserver 0.0.0.0:$porta" >> run
 chmod +x run
 echo "=============================================="
 echo "Clone concluido com sucesso!"
 echo "=============================================="
 echo "- Lembre-se de configurar o 03_site/app/local_settings_template.py e salvá-lo como local_settings.py"
-echo "- Execute o ./run para rodar o projeto"
+echo "- Execute o ./run para rodar o projeto e acesse http://localhost:$porta"
