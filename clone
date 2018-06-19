@@ -1,0 +1,44 @@
+clear
+echo "=============================================="
+echo "Copie o comando de clone e cole aqui (Ex: git clone git@bitbucket.org:<user>/<repo>.git):"
+echo "=============================================="
+read repositorio
+echo "=============================================="
+echo "Removendo possíveis versões anteriores..."
+echo "=============================================="
+rm -rf 03_site
+echo "=============================================="
+echo "Clonando repositorio $repositorio"
+echo "=============================================="
+$repositorio 03_site
+echo "=============================================="
+echo "Removendo versões anteriores do ENV..."
+echo "=============================================="
+rm -rf 09_ENV
+echo "=============================================="
+echo "Criando ENV..."
+echo "=============================================="
+mkdir 09_ENV
+cd 09_ENV
+virtualenv --no-site-packages --unzip-setuptools django
+. django/bin/activate
+cd ../03_site
+echo "=============================================="
+echo "Atualizando o pip..."
+echo "=============================================="
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+echo "=============================================="
+echo "Instalando dependencias do projeto..."
+echo "=============================================="
+pip install -r requirements.txt
+echo "Criando ./run"
+echo "deactivate" >> run
+echo ". ../09_ENV/django/bin/activate" >> run
+echo "python manage.py runserver 0.0.0.0:8000" >> run
+chmod +x run
+echo "=============================================="
+echo "Clone concluido com sucesso!"
+echo "=============================================="
+echo "- Lembre-se de configurar o 03_site/app/local_settings_template.py e salvá-lo como local_settings.py"
+echo "- Execute o ./run para rodar o projeto"
