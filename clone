@@ -24,6 +24,9 @@ cd 09_ENV
 virtualenv --no-site-packages --unzip-setuptools django
 . django/bin/activate
 cd ../03_site
+mkdir app/media
+mkdir app/media/uploads/
+mkdir app/media/uploads/ckuploads
 echo "=============================================="
 echo "Atualizando o pip..."
 echo "=============================================="
