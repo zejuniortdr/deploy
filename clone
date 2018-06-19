@@ -1,6 +1,7 @@
 clear
 echo "=============================================="
-echo "Copie o comando de clone e cole aqui (Ex: git clone git@bitbucket.org:<user>/<repo>.git):"
+echo "Copie o comando de clone e cole aqui:"
+echo "(Ex: git clone git@bitbucket.org:<user>/<repo>.git)"
 echo "=============================================="
 read repositorio
 echo "=============================================="
